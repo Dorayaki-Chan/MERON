@@ -54,3 +54,31 @@ cd .\MERON\
 
 python manage.py runserver
 ```
+
+# git関係
+極力にmasterブランチで作業しないこと。
+masterへマージする際はプルリクエスト作ってください。
+ブランチはいくつでもテキトーに作っていいです。
+
+リモートリポジトリの最新コードをローカルに反映
+```cmd
+git pull
+```
+
+ブランチの作成
+```cmd
+git branch (ブランチ名)
+例) git branch mydevelop
+```
+
+ブランチの移動
+```cmd
+git checkout (ブランチ名)
+例) git checkout mydevelop
+```
+
+```
+git add *(若しくは * の代わりにファイル名)
+git commit -m "コメント"
+git push
+```
