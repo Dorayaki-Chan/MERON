@@ -1,0 +1,13 @@
+<!--テンプレをここに書く-->
+{% load static %}
+<html>
+    <head>
+        <title>Team Meron</title>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        {% block content %}
+        <!--ここの中身が変わる-->
+        {% endblock %}
+    </body>
+</html>
