@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <p class="begin">
+        テストフォーム
+    </p>
+    <form action="result" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <table>
+            <tr>
+                <th>
+                    料理名
+                </th>
+                <td>
+                    <input type="text" name="dish" value="" required/>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="検索" />
+    </form>
+{% endblock %}
+
+
