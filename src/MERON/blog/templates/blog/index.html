@@ -11,13 +11,22 @@
                     料理名
                 </th>
                 <td>
-                    <input type="text" name="dish" value="" required/>
+                    <input type="file" name="dish_pic" accept=".jpg, .png, .jpeg">
+                </td>
+                <td>
+                    <input type="text" name="input_dish_name" value="{{ result }}" />
+                    <!--<input type="text" name="dish_name" value="" required/>-->
                 </td>
             </tr>
         </table>
         <br>
         <input type="submit" value="検索" />
     </form>
+    {{ dd_name }}
+    
+        {% for zairyo in zairyos %}
+            <p>{{zairyo.zairyo}}:{{zairyo.amount}}</p>
+        {% endfor %}
 {% endblock %}
 
 
