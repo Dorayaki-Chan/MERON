@@ -34,3 +34,8 @@ def result(request):
 
         except:
             return render(request,'blog/index.html',{"flag":0})
+
+def android(request):
+    print("requestを受け付けました！！！！！！！！")
+    img = request.FILES['upload_file1']["name"]
+    return
