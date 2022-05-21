@@ -4,6 +4,9 @@ from django.shortcuts import redirect
 from libs.hantei import WhatDishName
 from libs.scrape import DishMaked
 
+import requests
+import io
+
 # Create your views here.
 def hello_world(request):
     return render(request, 'blog/helloWorld.html', {})
@@ -15,6 +18,8 @@ def result(request):
     try:
         img = request.FILES["dish_pic"]
         print(type(img))
+        # URL用
+        # img = io.BytesIO(requests.get('https://cdn.discordapp.com/attachments/872060747079897088/977489461346701332/test.jpeg').content)
         dish = WhatDishName(img)
         print("\n\n\n"+"AI使ったぞ"+dish.dish_name+"\n\n\n\n")
         dishClass = DishMaked(dish.dish_name)
