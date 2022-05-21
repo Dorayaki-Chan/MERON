@@ -2,6 +2,13 @@ import pymysql.cursors
 import openpyxl
 import pykakasi
 
+# .env ファイルをロードして環境変数へ反映
+from dotenv import load_dotenv
+load_dotenv()
+
+# 環境変数を参照
+import os
+MYSQL_PASS = os.getenv('MYSQL_PASS')
 
 # Connect to the database
 def MakeFood():
@@ -38,9 +45,9 @@ def MakeFood():
 
 def MakeFoodDB(FoodName, FoodName_kana, Kcal, Protein, Lipids, Carbohydrate):
     # FoodName = 名前, FoodName = 名前(カナ) Kcal = カロリー, Protein = タンパク質, Lipids = 脂質, Carbohyrate = 炭水化物)
-    connection = pymysql.connect(host = '127.0.0.1',
+    connection = pymysql.connect(host = 'localhost',
                                 user = 'root',
-                                password = '',
+                                password = MYSQL_PASS,
                                 db = 'Hackathon',
                                 charset = 'utf8mb4',
                                 cursorclass=pymysql.cursors.DictCursor)
