@@ -3,6 +3,14 @@ import pymysql.cursors
 import statistics
 import pykakasi
 
+# .env ファイルをロードして環境変数へ反映
+from dotenv import load_dotenv
+load_dotenv()
+
+# 環境変数を参照
+import os
+MYSQL_PASS = os.getenv('MYSQL_PASS')
+
 def Search(FoodName):
     #Search(食材の名前)を行うとカロリー、タンパク質、脂質、炭水化物の順番で返す
     kks = pykakasi.kakasi()
@@ -12,9 +20,9 @@ def Search(FoodName):
         FoodName_kana += char['kana']
     Kcal_List, Protein_List, Lipids_List, Carbohydrate_List = [], [], [], []
     connection = pymysql.Connection(
-        host = '127.0.0.1',
+        host = 'localhost',
         user = 'root',
-        password = '',
+        password = MYSQL_PASS,
         db = 'Hackathon',
         charset = 'utf8mb4',
         cursorclass=pymysql.cursors.DictCursor)#DictCursor = 辞書型でデータが帰ってくる
@@ -44,7 +52,7 @@ def Search(FoodName):
     return round(Kcal, 1), round(Protein, 1), round(Lipids), round(Carbohydrate, 1)
 
 def Main():
-    FoodName = input()
+    FoodName = input("料理名を入力:")
     Search(FoodName)
 
 if __name__ == "__main__":
