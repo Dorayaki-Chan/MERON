@@ -39,6 +39,19 @@ class DishMaked:
             i = i + 1
         
         return arry
+    
+    # TODO:量をgに変換する
+    def changeAmount(self, amount_moto):
+        if '大さじ' in amount_moto:
+            amountNunm = amount_moto.replace('大さじ') * 15 
+        if '子さじ' in amount_moto:
+            amountNunm = amount_moto.replace('小さじ') * 5
+        pass
+    
+    # TODO:かっこ削除
+    def delateKakko(self, sorce):
+        pass
+
 
 if __name__ == '__main__':
     x = DishMaked('ステーキ')
