@@ -6,8 +6,9 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        {% block content %}
-        <!--ここの中身が変わる-->
-        {% endblock %}
+        <div class="main">
+            {% block content %}
+            {% endblock %}
+        </div>
     </body>
 </html>
