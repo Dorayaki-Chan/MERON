@@ -4,7 +4,7 @@
     <!-- Navbar Start -->
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
-            <a href="index.html" class="navbar-brand ml-lg-3">
+            <a href="" class="navbar-brand ml-lg-3">
                 <h1 class="m-0 display-5 text-uppercase text-primary"><i class="fa-solid fa-melon-slice"></i>Meron</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -28,86 +28,50 @@
             <!-- <h1 class="text-white display-3 mb-5">Logistics Services</h1> -->
             <div class="mx-auto" style="width: 100%; max-width: 600px;">
                 <form action="result" method="post" enctype="multipart/form-data">{% csrf_token %}
-                <div class="input-group">
-                    <!-- <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Tracking Id">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary px-3">Track & Trace</button>
-                    </div> -->
-                    
-                        <input type="text" placeholder="Dish Name" name="input_dish_name" class="form-control border-light"  style="padding: 30px;" value="{{ result }}" />
-                        <label class="my_label btn btn-primary px-3 js-open">
-                            <i class="fa-solid fa-camera fa-2x" style = "display: table-cell; vertical-align: middle; border-spacing: 3px 0;"></i>
-                        </label>
+                    <div class="input-group">
+                        <!-- <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Tracking Id">
                         <div class="input-group-append">
-                            <button class="btn btn-primary px-3" type="submit">Search</button>
-                        </div>
-
-
-                </div>
-                </form>
-                        <div id="overlay" class="overlay"></div>
-                        <!-- モーダルウィンドウ -->
-                        <div class="modal-window">
-                            <form action="result" method="post" enctype="multipart/form-data">{% csrf_token %}
-                                <div class="input-group">
-                                    <input type="text" placeholder="Dish Name" name="input_dish_name" class="form-control border-light"  style="padding: 30px;" value="{{ result }}" />
-                                    <label class="btn btn-primary px-3">
-                                        <input type="file" class="border-light "  name="dish_pic" accept=".jpg, .png, .jpeg">
-                                        <i class="fa-solid fa-camera fa-2x" style = "display: table-cell; vertical-align: middle; border-spacing: 3px 0;"></i>
-                                    </label>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary px-3" type="submit">Search</button>
-                                    </div>
+                            <button class="btn btn-primary px-3">Track & Trace</button>
+                        </div> -->
+                        
+                            <input type="text" placeholder="Dish Name" name="input_dish_name" class="form-control border-light"  style="padding: 30px;" value="{{ result }}" />
+                            <label class="my_label btn btn-primary px-3 js-open" style="padding-top:13px; padding-buttom:13px;">
+                                <div>
+                                <i class="fa-solid fa-camera fa-2x" style = "display: table-cell; vertical-align: middle; border-spacing: 3px 0;"></i>
                                 </div>
-                            </form>
-                            <div id="QDMvGf" class="S6U6Pd" style="left: 446.667px; top: 176px; width: 589px; display: block;">
+                            </label>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary px-3" type="submit">Search</button>
+                            </div>
+
+
+                    </div>
+                <!-- </form> -->
+                        <div id="overlay" class="overlay" ></div>
+                        <!-- モーダルウィンドウ -->
+                        <div class="modal-window" style="margin-top: 30px;">
+                            <div id="QDMvGf" class="S6U6Pd" style="background:white; padding-top:30px; height:130px; top: 176px; width: 100%; display: block;">
                                 <div id="Ax54rd" class="WHWWB">
                                     <div class="YgiJIe">画像で検索</div>
                                     <div id="dt8swb"></div>
-                                    <div style="line-height:2;">
-                                        <span id="xQsBUb">テキストの代わりに画像で Google を検索します。ここに画像をドラッグしてみてください。</span>
-                                    </div>
                                 </div>
                                     <div id="fpbnK">
-                                        <form id="Acbdwf" method="GET" enctype="multipart/form-data" action="/searchbyimage">
-                                            <div id="dRSWfb" style="display: none;">
-                                                <div class="WHWWB">
-                                                    <div class="iOGqzf mJEC7c">
-                                                        <span id="cjyo4e" class="IyNJid H4qWMc aXIg1b">画像の URL を貼り付け</span>
-                                                    </div>
+                                        <!-- <form action="result" method="post" enctype="multipart/form-data">{% csrf_token %} -->
+                                            <div id="FQt3Wc" style="display: block;">
+                                                <div id="kFWkgf" class="thCpXb">
+                                                    <input accept=".jpg, .png, .jpeg" name="dish_pic" style="margin:7px 4px;" type="file">
                                                 </div>
-                                                <table class="thCpXb" cellpadding="0" cellspacing="0">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="nfyh2c"><input id="Ycyxxc" class="lst" aria-labelledby="cjyo4e" name="image_url" value="" autocomplete="off" spellcheck="false"></td><td><input id="RZJ9Ub" class="gbqfb LIlUb" name="" type="submit" value="画像で検索"></td></tr></tbody></table></div><div id="FQt3Wc" style="display: block;"><div class="WHWWB"><a class="iOGqzf H4qWMc aXIg1b" href="about:invalid#zClosurez" onclick="google.qb.ti(false);return false">画像の URL を貼り付け</a><div class="iOGqzf"><div class="iOGqzf mJEC7c"><span class="IyNJid H4qWMc aXIg1b">画像をアップロード</span><div id="Dkwjte" class="RoTfUc" alt="Google 検索ヘルプ"></div></div></div></div><div id="kFWkgf" class="thCpXb"><input id="awyMjb" name="encoded_image" style="margin:7px 4px;" type="file"></div></div><input id="drITx" name="image_content" type="hidden"><input id="LEqfCf" name="filename" type="hidden"><input name="hl" type="hidden" value="ja"></form></div><center id="jkXfPe" class="sYeeV" style="height: 120px;"><div class="bdmI4" style="line-height: 120px;">ここに画像をドロップ</div></center><center id="LLsDr" class="sYeeV" style="height: 120px;"><div class="bdmI4" style="line-height: 120px;"><span id="Yvdih">ファイルをアップロードしています</span><img class="frKW9b" src="/images/spin-24.gif" data-iml="1653140906734"></div></center></div>
+                                            </div>
+                                        <!-- </form> -->
+                                    </div>
+                                </div>
                         </div>
+                </form>
             </div>
         </div>
     </div>
     <!-- Header End -->
 
-
-    <p class="begin">
-        テストフォーム
-    </p>
-    <form action="result" method="post" enctype="multipart/form-data">{% csrf_token %}
-        <table>
-            <tr>
-                <th>
-                    料理名
-                </th>
-                <td>
-                    <input type="file" name="dish_pic" accept=".jpg, .png, .jpeg">
-                </td>
-                <td>
-                    <input type="text" name="input_dish_name" value="{{ result }}" />
-                    <!--<input type="text" name="dish_name" value="" required/>-->
-                </td>
-            </tr>
-        </table>
-        <br>
-        <input type="submit" value="検索" />
-    </form>
     {{ dd_name }}
     
         {% for zairyo in zairyos %}

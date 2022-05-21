@@ -22,10 +22,15 @@ label > input{
 .my_label{
     display:flex;
     width: auto;
+    padding:0,auto;
 }
 
 .my_label > i{
     align-items :center;
+}
+
+.my_label > div{
+    padding: 0,auto;
 }
 
 /******* Bootstrap Theming ********/
