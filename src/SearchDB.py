@@ -40,12 +40,4 @@ def Search(FoodName):
         connection.rollback()
     finally:
         connection.close()
-    print(Kcal, Protein, Lipids, Carbohydrate)
     return round(Kcal, 1), round(Protein, 1), round(Lipids), round(Carbohydrate, 1)
-
-def Main():
-    FoodName = input()
-    Search(FoodName)
-
-if __name__ == "__main__":
-    Main()
