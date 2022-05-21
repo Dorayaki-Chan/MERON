@@ -42,6 +42,9 @@ def Search(FoodName):
                 Protein_List.append(dict['Protein'])
                 Lipids_List.append(dict['Lipids'])
                 Carbohydrate_List.append(dict['Carbohydrate'])
+            print("食材リスト", Kcal_List, Protein_List, Lipids_List, Carbohydrate_List)
+
+            if not Kcal_List:
             Kcal, Protein, Lipids, Carbohydrate = statistics.mean(Kcal_List), statistics.mean(Protein_List),statistics.mean(Lipids_List), statistics.mean(Carbohydrate_List)
     except Exception as e:
         print('error:', e)
