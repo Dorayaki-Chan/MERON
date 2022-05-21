@@ -1,27 +1,77 @@
 {% extends 'blog/base.html' %}
-
 {% block content %}
-    <p class="begin">
-        テストフォーム
-    </p>
-    <form action="result" method="post" enctype="multipart/form-data">{% csrf_token %}
-        <table>
-            <tr>
-                <th>
-                    料理名
-                </th>
-                <td>
-                    <input type="file" name="dish_pic" accept=".jpg, .png, .jpeg">
-                </td>
-                <td>
-                    <input type="text" name="input_dish_name" value="{{ result }}" />
-                    <!--<input type="text" name="dish_name" value="" required/>-->
-                </td>
-            </tr>
-        </table>
-        <br>
-        <input type="submit" value="検索" />
-    </form>
+    
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
+            <a href="" class="navbar-brand ml-lg-3">
+                <h1 class="m-0 display-5 text-uppercase text-primary"><i class="fa-solid fa-melon-slice"></i>Meron</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav m-auto py-0">
+                    <!-- <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a> -->
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="jumbotron jumbotron-fluid mb-5">
+        <div class="container text-center py-5">
+            <h1 class="text-primary mb-4">Calories Calculate</h1>
+            <!-- <h1 class="text-white display-3 mb-5">Logistics Services</h1> -->
+            <div class="mx-auto" style="width: 100%; max-width: 600px;">
+                <form action="result" method="post" enctype="multipart/form-data">{% csrf_token %}
+                    <div class="input-group">
+                        <!-- <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Tracking Id">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary px-3">Track & Trace</button>
+                        </div> -->
+                        
+                            <input type="text" placeholder="Dish Name" name="input_dish_name" class="form-control border-light"  style="padding: 30px;" value="{{ result }}" />
+                            <label class="my_label btn btn-primary px-3 js-open" style="padding-top:13px; padding-buttom:13px;">
+                                <div>
+                                <i class="fa-solid fa-camera fa-2x" style = "display: table-cell; vertical-align: middle; border-spacing: 3px 0;"></i>
+                                </div>
+                            </label>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary px-3" type="submit">Search</button>
+                            </div>
+
+
+                    </div>
+                <!-- </form> -->
+                        <div id="overlay" class="overlay" ></div>
+                        <!-- モーダルウィンドウ -->
+                        <div class="modal-window" style="margin-top: 30px;">
+                            <div id="QDMvGf" class="S6U6Pd" style="background:white; padding-top:30px; height:130px; top: 176px; width: 100%; display: block;">
+                                <div id="Ax54rd" class="WHWWB">
+                                    <div class="YgiJIe">画像で検索</div>
+                                    <div id="dt8swb"></div>
+                                </div>
+                                    <div id="fpbnK">
+                                        <!-- <form action="result" method="post" enctype="multipart/form-data">{% csrf_token %} -->
+                                            <div id="FQt3Wc" style="display: block;">
+                                                <div id="kFWkgf" class="thCpXb">
+                                                    <input accept=".jpg, .png, .jpeg" name="dish_pic" style="margin:7px 4px;" type="file">
+                                                </div>
+                                            </div>
+                                        <!-- </form> -->
+                                    </div>
+                                </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
     {{ dd_name }}
     
         {% for zairyo in zairyos %}
