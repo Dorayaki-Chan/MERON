@@ -5,4 +5,5 @@ urlpatterns = [
     path('test', views.hello_world, name='helloWorld'),
     path('',views.index,name='index'),
     path('result',views.result,name='result'),
+    path('android',views.android,name='android'),
 ]
