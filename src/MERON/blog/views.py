@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 
 from libs.hantei import WhatDishName
 from libs.scrape import DishMaked
+from libs.SearchDB import Search
 
 import requests
 import io
@@ -23,6 +24,10 @@ def result(request):
         dish = WhatDishName(img)
         print("\n\n\n"+"AI使ったぞ"+dish.dish_name+"\n\n\n\n")
         dishClass = DishMaked(dish.dish_name)
+        print(dish.dish_name)
+        for syokuzai in dishClass.syokuzais:
+            print("食材", syokuzai['zairyo'])
+            Kcal, Protein, Lipids, Carbohydrate = Search(syokuzai['zairyo'])
 
         return render(request,'blog/index.html',{"result":dish.dish_name, "dd_name":dish.dish_name, "zairyos":dishClass.syokuzais, "flag":1})
     except:
@@ -30,6 +35,9 @@ def result(request):
             dish_name = request.POST["input_dish_name"]
             dishClass = DishMaked(dish_name)
             print("\n\n\n"+"入力値観たぞ"+dish_name+"\n\n\n\n")
+            for syokuzai in dishClass.syokuzais:
+                print("食材", syokuzai['zairyo'])
+                Kcal, Protein, Lipids, Carbohydrate = Search(syokuzai['zairyo'])
             return render(request,'blog/index.html',{"result":dish_name, "dd_name":dish_name, "zairyos":dishClass.syokuzais, "flag":1})
 
         except:
