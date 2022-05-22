@@ -69,7 +69,7 @@
     <!-- Header End -->
 
 
-    {% if eiyoso is not none %}
+    {% if flag == 1 %}
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
@@ -83,7 +83,7 @@
                     <!-- <h4>{{ eiyouso.Kcal }}Kcal</h4> -->
                     <div style="display:flex; justify-content:center;">
                         <h1 class="text-primary mb-2" data-toggle="counter-up" >{{ eiyouso.Kcal }}</h1>
-                        <h6 class="font-weight-bold mb-4" style="justify-content:center;">Kcal</h6>
+                        <h6 class="font-weight-bold mb-4" style="justify-content:center;padding-left:2px;">Kcal</h6>
                     </div>
                 </div>
 
@@ -93,7 +93,7 @@
                     </div>
                     <div style="display:flex; justify-content:center;">
                         <h1 class="text-primary mb-2" data-toggle="counter-up" >{{ eiyouso.Protein }}</h1>
-                        <h6 class="font-weight-bold mb-4" style="justify-content:center;">g</h6>
+                        <h6 class="font-weight-bold mb-4" style="justify-content:center;padding-left:2px;">g</h6>
                     </div>
                 </div>
 
@@ -103,7 +103,7 @@
                     </div>
                     <div style="display:flex; justify-content:center;">
                         <h1 class="text-primary mb-2" data-toggle="counter-up" >{{ eiyouso.Lipids }}</h1>
-                        <h6 class="font-weight-bold mb-4" style="justify-content:center;">g</h6>
+                        <h6 class="font-weight-bold mb-4" style="justify-content:center;padding-left:2px;">g</h6>
                     </div>
                 </div>
 
@@ -112,8 +112,8 @@
                         <h5 class="text-white font-weight-medium m-0">Carbohydrate</h5>
                     </div>
                     <div style="display:flex; justify-content:center;">
-                        <h1 class="text-primary mb-2" data-toggle="counter-up" >{{ eiyoso.Carbohydrate }}</h1>
-                        <h6 class="font-weight-bold mb-4" style="justify-content:center;">g</h6>
+                        <h1 class="text-primary mb-2" data-toggle="counter-up" >{{ eiyouso.Carbohydrate }}</h1>
+                        <h6 class="font-weight-bold mb-4" style="justify-content:center;padding-left:2px;">g</h6>
                     </div>
                 </div>
 
