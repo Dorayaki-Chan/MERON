@@ -20,7 +20,7 @@ class DishMaked:
         soup_zairyo = BeautifulSoup(response_zairyo, 'html.parser')
         response_zairyo.close()
 
-        self.number_of_people = soup_zairyo.find('span', class_='servings').get_text().replace('(', '').replace(')', '').replace('人前', '')
+        self.number_of_people = self.changefloat(soup_zairyo.find('span', class_='servings').get_text().replace('(', '').replace(')', '').replace('人前', ''))
 
         zairyos = soup_zairyo.findAll('a', class_='DlyLink ingredient-name')
 
@@ -35,9 +35,9 @@ class DishMaked:
         for zairyo  in zairyos:
             zairyo = zairyos[i].get_text().replace('\n', '').replace(' ', '')
             amount = amounts[i].get_text().replace('\n', '').replace(' ', '')
-            a = self.changeAmount(amount)
-            print(type(a), a)
-            dic = {"zairyo": self.delateKakko(zairyo), "amount":amount}
+            guramu = self.changeAmount(amount)
+            print(type(guramu), guramu)
+            dic = {"zairyo": self.delateKakko(zairyo), "amount":amount, "guramu":guramu}
             arry.append(dic)
             i = i + 1
         
@@ -49,10 +49,10 @@ class DishMaked:
 
         if '大さじ' in amount_moto:
             henkan = amount_moto.replace('大さじ', '')
-            amountNunm =  self.changefloat(henkan) * 15
+            amountNunm =  self.slashCuter(henkan) * 15
         if '小さじ' in amount_moto:
             henkan = amount_moto.replace('小さじ', '')
-            amountNunm = self.changefloat(henkan) * 5
+            amountNunm = self.slashCuter(henkan) * 5
         if '少々' in amount_moto:
             amountNunm = 0
         if 'ひとつまみ' in amount_moto:
@@ -69,14 +69,20 @@ class DishMaked:
             amountNunm =  100
         return amountNunm
     
+    def slashCuter(self, bunsu):
+        print("スラッシュ前", bunsu)
+        if '/' in bunsu:
+            henkan = bunsu.split('/')
+            return self.changefloat(henkan[0]) / self.changefloat(henkan[1])
+        else:
+            return self.changefloat(bunsu) 
+    
     def changefloat(self, str):
         try:
             num = float(str)
         except ValueError:
-            print(type(str), str)
             return str
         else:
-            print(type(num), num)
             return num
 
     
