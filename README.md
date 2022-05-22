@@ -1,5 +1,17 @@
-# メモ
-## 参考
+# MERON【Calorie Calculator】
+
+料理の画像から料理名をAIが考え、その料理名をもとに栄養素・カロリーを算出するアプリ。
+
+## 階層
+
+src  
+ ├ MERON(バックエンド)  
+ ├ takephotoAPP(Androidアプリ)  
+ └ MakeDB.py(DBテーブルの作成)  
+
+
+## メモ
+### 参考
 [Django Girls](https://tutorial.djangogirls.org/ja/)
 
 ## 初めてpullしたとき
@@ -55,7 +67,7 @@ cd .\MERON\
 python manage.py runserver
 ```
 
-# git関係
+## git関係
 極力にmasterブランチで作業しないこと。
 masterへマージする際はプルリクエスト作ってください。
 ブランチはいくつでもテキトーに作っていいです。
