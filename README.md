@@ -5,9 +5,9 @@
 ## 階層
 
 src
- ├ MERON(バックエンド)
- ├ takephotoAPP(Androidアプリ)
- └ MakeDB.py(DBテーブルの作成)
+ ├ MERON(バックエンド)  
+ ├ takephotoAPP(Androidアプリ)  
+ └ MakeDB.py(DBテーブルの作成)  
 
 
 ## メモ
