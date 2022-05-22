@@ -35,6 +35,8 @@ class DishMaked:
         for zairyo  in zairyos:
             zairyo = zairyos[i].get_text().replace('\n', '').replace(' ', '')
             amount = amounts[i].get_text().replace('\n', '').replace(' ', '')
+            a = self.changeAmount(amount)
+            print(type(a), a)
             dic = {"zairyo": self.delateKakko(zairyo), "amount":amount}
             arry.append(dic)
             i = i + 1
