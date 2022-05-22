@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 {% block content %}
     
     <!-- Navbar Start -->
@@ -30,7 +31,7 @@
                 <form action="result" method="post" enctype="multipart/form-data">{% csrf_token %}
                     <div class="input-group">                        
                             <input type="text" placeholder="Dish Name" name="input_dish_name" class="form-control border-light"  style="padding: 30px;" value="{{ result }}" />
-                            <label class="my_label btn btn-primary px-3 js-open" style="padding-top:13px; padding-buttom:13px;">
+                            <label class="my_label btn btn-primary px-3 js-open" style="padding-top:13px; padding-bottom:13px;">
                                 <div>
                                 <i class="fa-solid fa-camera fa-2x" style = "display: table-cell; vertical-align: middle; border-spacing: 3px 0;"></i>
                                 </div>
@@ -66,6 +67,7 @@
         </div>
     </div>
     <!-- Header End -->
+
 
     {% if eiyoso is not none %}
     <div class="container-fluid pt-5">
