@@ -55,6 +55,7 @@ def Search(FoodName):
                 Lipids_List.append(0)
             if not Carbohydrate_List:
                 Carbohydrate_List.append(0)
+            # print("食材リスト", Kcal_List, Protein_List, Lipids_List, Carbohydrate_List)
 
             Kcal, Protein, Lipids, Carbohydrate = statistics.mean(Kcal_List), statistics.mean(Protein_List),statistics.mean(Lipids_List), statistics.mean(Carbohydrate_List)
     except Exception as e:
@@ -62,8 +63,8 @@ def Search(FoodName):
         connection.rollback()
     finally:
         connection.close()
-    print(Kcal, Protein, Lipids, Carbohydrate)
-    return round(Kcal, 1), round(Protein, 1), round(Lipids), round(Carbohydrate, 1)
+    # print(Kcal, Protein, Lipids, Carbohydrate)
+    return round(Kcal, 1), round(Protein, 1), round(Lipids, 1), round(Carbohydrate, 1)
 
 def Main():
     FoodName = input("料理名を入力:")
