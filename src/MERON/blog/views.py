@@ -49,6 +49,7 @@ def eiyouSum(dishClass):
     Carbohydrate = 0
     for syokuzai in dishClass.syokuzais:
         # print("食材", syokuzai['zairyo'])
+        print(syokuzai['guramu'])
         kansan = syokuzai['guramu'] / 100
         K, P, L, C = Search(syokuzai['zairyo'])
         Kcal = K * kansan + Kcal

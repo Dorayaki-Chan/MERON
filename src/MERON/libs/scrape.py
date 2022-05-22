@@ -67,6 +67,15 @@ class DishMaked:
             amountNunm =  self.changefloat(henkan)
         if '個' in amount_moto:
             amountNunm =  100
+        if '尾' in amount_moto:
+            henkan = amount_moto.replace('尾', '')
+            amountNunm =  self.changefloat(henkan) * 16
+        if '枚' in amount_moto:
+            henkan = amount_moto.replace('枚', '')
+            amountNunm =  self.changefloat(henkan) * 30
+        if '本' in amount_moto:
+            henkan = amount_moto.replace('本', '')
+            amountNunm =  self.changefloat(henkan) * 8.1
         return amountNunm
     
     def slashCuter(self, bunsu):
