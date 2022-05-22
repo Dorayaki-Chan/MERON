@@ -1,4 +1,5 @@
 
+from numpy import append
 import pymysql.cursors
 import statistics
 import pykakasi
@@ -37,14 +38,24 @@ def Search(FoodName):
             para = ('%' + FoodName_kana + '%')
             cursor.execute(sql, (para))
             results = cursor.fetchall()
+            Kcal_List = []
+            Protein_List = []
+            Lipids_List = []
+            Carbohydrate_List = []
             for i, dict in enumerate(results):
                 Kcal_List.append(dict['Kcal'])
                 Protein_List.append(dict['Protein'])
                 Lipids_List.append(dict['Lipids'])
                 Carbohydrate_List.append(dict['Carbohydrate'])
-            print("食材リスト", Kcal_List, Protein_List, Lipids_List, Carbohydrate_List)
+            if not Kcal_List:
+                Kcal_List.append(0)
+            if not Protein_List:
+                Protein_List.append(0)
+            if not Lipids_List:
+                Lipids_List.append(0)
+            if not Carbohydrate_List:
+                Carbohydrate_List.append(0)
 
-            # if not Kcal_List:
             Kcal, Protein, Lipids, Carbohydrate = statistics.mean(Kcal_List), statistics.mean(Protein_List),statistics.mean(Lipids_List), statistics.mean(Carbohydrate_List)
     except Exception as e:
         print('error:', e)
