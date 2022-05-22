@@ -72,9 +72,16 @@
         </div>
     </div>
     <!-- Header End -->
-
     {{ dd_name }}
-    
+    <p>栄養素</p>
+    <table>
+        <tr><th>栄養素</th><th>量</th></tr>
+        <tr><td>カロリー</td><td>{{ eiyouso.Kcal}}</td></tr>
+        <tr><td>タンパク質</td><td>{{ eiyouso.Protein}}</td></tr>
+        <tr><td>脂質</td><td>{{ eiyouso.Lipids}}</td></tr>
+        <tr><td>炭水化物</td><td>{{ eiyouso.Carbohydrate}}</td></tr>
+    </table>
+    <p>食材リスト</p>
         {% for zairyo in zairyos %}
             <p>{{zairyo.zairyo}}:{{zairyo.amount}}</p>
         {% endfor %}
