@@ -46,20 +46,37 @@ class DishMaked:
     # TODO:量をgに変換する
     def changeAmount(self, amount_moto):
         amountNunm = amount_moto
+
         if '大さじ' in amount_moto:
             henkan = amount_moto.replace('大さじ', '')
             amountNunm =  self.changefloat(henkan) * 15
         if '小さじ' in amount_moto:
             henkan = amount_moto.replace('小さじ', '')
             amountNunm = self.changefloat(henkan) * 5
+        if '少々' in amount_moto:
+            amountNunm = 0
+        if 'ひとつまみ' in amount_moto:
+            amountNunm = 0.5
+        if 'ml' in amount_moto:
+            henkan = amount_moto.replace('ml', '')
+            amountNunm =  self.changefloat(henkan)
+        if '適量' in amount_moto:
+            amountNunm = 0
+        if 'g' in amount_moto:
+            henkan = amount_moto.replace('g', '')
+            amountNunm =  self.changefloat(henkan)
+        if '個' in amount_moto:
+            amountNunm =  100
         return amountNunm
     
-    def changefloat(str):
+    def changefloat(self, str):
         try:
             num = float(str)
         except ValueError:
+            print(type(str), str)
             return str
         else:
+            print(type(num), num)
             return num
 
     
