@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">消費者App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="main">Main Activity</string>
+    <string name="sub">Sub Activity</string>
+    <string name="hint1">"message"</string>
+    <string name="hint2">"message"</string>
+    <string name="A">"品種名"</string>
+    <string name="B">"産地"</string>
+    <string name="C">"収穫日"</string>
+    <string name="D">"出荷日"</string>
+    <string name="move">move</string>
+    <string name="back">back</string>
+    <string name="message">message</string>
+
+    <string name="text1">くだもの</string>
+    <string name="text2">トレーサビリティシステム</string>
+    <string name="P_btn">生産者</string>
+    <string name="C_btn">消費者</string>
+    <string name="text3">登録完了</string>
+    <string name="hint3">備考欄</string>
+
+</resources>

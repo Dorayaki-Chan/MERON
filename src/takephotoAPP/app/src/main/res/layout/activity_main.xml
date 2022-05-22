@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/main_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/C_photo_button"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="起動" />
+
+                <Button
+                    android:id="@+id/P_photo_button"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="消費者"
+                    android:visibility="gone"/>
+
+                <ImageButton
+                    android:id="@+id/setting_button"
+                    android:layout_width="42dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/setting" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/res_photo_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/webView_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <Button
+                android:id="@+id/back_btn"
+                android:layout_width="151dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="戻る" />
+
+            <WebView
+                android:id="@+id/web_view"
+                android:layout_width="match_parent"
+                android:layout_height="575dp">
+
+            </WebView>
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>
