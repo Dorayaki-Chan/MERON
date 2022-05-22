@@ -33,6 +33,10 @@ label > input{
     padding: 0,auto;
 }
 
+.my_food_wrapper{
+    width: 100%;
+}
+
 /******* Bootstrap Theming ********/
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
@@ -9576,7 +9580,7 @@ label > input{
   }
   
   .jumbotron {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/header.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
