@@ -28,7 +28,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 # pythonanywhere用
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.10.7']
 
 
 # Application definition
